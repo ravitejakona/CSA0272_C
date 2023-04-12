@@ -1,0 +1,187 @@
+1.C program to check positive, negative or zero using simple if or if else. C program to input any number from user and check whether the given number is positive, negative or zero. Logic to check negative, positive or zero in C programming.
+#include <stdio.h>
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("%d is a positive number.\n", num);
+    }
+    else if (num < 0) {
+        printf("%d is a negative number.\n", num);
+    }
+    else {
+        printf("The number is zero.\n");
+    }
+
+    return 0;
+}
+
+2.C program to check whether a number is divisible by 5 and 11 or not using if else. How to check divisibility of any number in C programming. C program to enter any number and check whether it is divisible by 5 and 11 or not. Logic to check divisibility of a number in C program
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num % 5 == 0 && num % 11 == 0) {
+        printf("%d is divisible by both 5 and 11.\n", num);
+    } else {
+        printf("%d is not divisible by both 5 and 11.\n", num);
+    }
+
+    return 0;
+}
+
+3.C program to input a character from user and check whether the given character is alphabet or not using if else. How to check whether a character is alphabet or not in C programming. Logic to check if a character is alphabet or not in C program.
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+  char c;
+
+  printf("Enter a character: ");
+  scanf("%c", &c);
+
+  if (isalpha(c)) {
+    printf("%c is an alphabet.\n", c);
+  } else {
+    printf("%c is not an alphabet.\n", c);
+  }
+
+  return 0;
+}
+
+4.C program to count the Vowels in the given string.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char str;
+  int count = 0;
+
+  printf("Enter a string: ");
+  fgets(str, sizeof(str), stdin);
+
+  for (int i = 0; i < strlen(str); i++) {
+    if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+        str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+      count++;
+    }
+  }
+
+  printf("Number of vowels in the string: %d\n", count);
+
+  return 0;
+}
+
+5.C program to input character from user and check whether character is uppercase or lowercase alphabet using if else. How to check uppercase and lowercase using if else in C programming. Logic to check uppercase and lowercase alphabets in C program.
+#include <stdio.h>
+
+int main() {
+  char ch;
+
+  printf("Enter a character: ");
+  scanf("%c", &ch);
+
+  if (ch >= 'A' && ch <= 'Z') {
+    printf("%c is an uppercase alphabet.\n", ch);
+  } else if (ch >= 'a' && ch <= 'z') {
+    printf("%c is a lowercase alphabet.\n", ch);
+  } else {
+    printf("%c is not an alphabet.\n", ch);
+  }
+
+  return 0;
+}
+
+6.C program to input amount from user and print minimum number of notes (Rs. 500, 100, 50, 20, 10, 5, 2, 1) required for the amount. How to the minimum number of notes required for the given amount in C programming. Program to find minimum number of notes required for the given denomination. Logic to find minimum number of denomination for a given amount in C program.
+#include <stdio.h>
+
+int main() {
+    int num, count = 0;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        num /= 10;
+        ++count;
+    }
+    printf("Number of digits: %d", count);
+    return 0;
+}
+
+7.C program to input a number from user and count number of digits in the given integer using loop. How to find total digits in a given integer using loop in C programming. Logic to count digits in a given integer without using loop in C program.
+#include <stdio.h>
+
+int main() {
+    int num, count = 0;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        num /= 10;
+        ++count;
+    }
+    printf("Number of digits: %d", count);
+    return 0;
+}
+
+8.C program to input a number and calculate sum of digits using for loop. How to find sum of digits of a number in C program. Logic to find sum of digits of a given number in C programming.
+#include <stdio.h>
+
+int main() {
+  int num, digit, sum = 0;
+
+  printf("Enter a number: ");
+  scanf("%d", &num);
+
+  for (; num > 0; num /= 10) {
+    digit = num % 10;
+    sum += digit;
+  }
+
+  printf("The sum of digits of the number is %d\n", sum);
+
+  return 0;
+}
+
+9.C program to input a number from user and find reverse of the given number using for loop. How to find reverse of any number using loop in C program. Logic to find reverse of a number in C programming.
+#include <stdio.h>
+
+int main() {
+    int n, reverse = 0, remainder;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (; n != 0; n /= 10) { // loop through each digit of the number
+        remainder = n % 10; // extract the last digit of the number
+        reverse = reverse * 10 + remainder; // add the extracted digit to the reverse number
+    }
+
+    printf("The reverse of the number is %d\n", reverse);
+
+    return 0;
+}
+
+
+10.C program to input decimal number from user and convert to binary number system. How to convert from decimal number to binary number system in C program. Logic to convert decimal to binary number system in C programming.
+#include <stdio.h>
+
+int main() {
+    int decimal, binary = 0, base = 1, remainder;
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    while (decimal != 0) { // loop until the decimal number is zero
+        remainder = decimal % 2; // get the remainder when dividing by 2
+        binary += remainder * base; // add the remainder to the binary number
+        decimal /= 2; // divide the decimal number by 2
+        base *= 10; // multiply the base by 10
+    }
+
+    printf("The binary equivalent is %d\n", binary);
+
+    return 0;
+}
