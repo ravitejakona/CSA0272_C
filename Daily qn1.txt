@@ -1,0 +1,220 @@
+CEQ6
+#include <stdio.h>
+int main() {
+    int n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) { // loop through each row
+        for (int j = 1; j <= i; j++) { // print the required number of asterisks for each row
+            printf("*");
+        }
+        printf("\n"); // move to the next line for the next row
+    }
+
+    return 0;
+}
+
+CEQ44
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    int sqrt_n = sqrt(n); // calculate the square root of the number using the sqrt() function from the math.h library
+
+    if (sqrt_n * sqrt_n == n) { // check if the square root is an integer (i.e., a perfect square)
+        printf("The square root of %d is %d and %d\n", n, sqrt_n, -sqrt_n);
+    } else {
+        printf("%d is not a perfect square number\n", n);
+    }
+
+    return 0;
+}
+
+CEQ45
+#include <stdio.h>
+
+int main() {
+    int rows;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+
+    for (int i = rows; i >= 1; i--) { // loop through each row, starting from the top
+        for (int j = 1; j <= rows - i; j++) { // print the required number of spaces before printing the asterisks
+            printf(" ");
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) { // print the required number of asterisks
+            printf("*");
+        }
+        printf("\n"); // move to the next line for the next row
+    }
+
+    return 0;
+}
+
+CEQ9
+#include <stdio.h>
+
+int main() {
+    int N;
+    printf("Enter the value of N: ");
+    scanf("%d", &N);
+
+    int a = 1, b = 2, c = 0, even_sum = 2; // initialize the variables with the first two numbers in the series
+    while (c <= N) {
+        c = a + b; // calculate the next number in the series
+        if (c % 2 == 0 && c <= N) { // check if the number is even and less than or equal to N
+            even_sum += c; // add the even number to the sum
+        }
+        a = b; // update the variables for the next iteration
+        b = c;
+    }
+
+    printf("The sum of even Fibonacci numbers up to %d is: %d\n", N, even_sum);
+    return 0;
+}
+
+CHQ5
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, originalNum, remainder, n = 0;
+    float result = 0.0;
+
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    originalNum = num;
+
+    // count the number of digits
+    while (originalNum != 0) {
+        originalNum /= 10;
+        ++n;
+    }
+
+    originalNum = num;
+
+    // calculate the result
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += pow(remainder, n);
+        originalNum /= 10;
+    }
+
+    // check if num is an Armstrong number
+    if ((int)result == num) {
+        printf("%d is an Armstrong number.\n", num);
+    }
+    else {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+
+    return 0;
+}
+
+CHEQ43
+#include <stdio.h>
+int main() {
+    int number, sum = 0, digit;
+    
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    
+    while (number != 0) {
+        digit = number % 10; // get the last digit
+        sum += digit; // add the last digit to the sum
+        number /= 10; // remove the last digit from the number
+    }
+    
+    printf("The sum of the digits is %d\n", sum);
+    
+    return 0;
+}
+
+CHEQ42
+#include <stdio.h>
+
+int main() {
+  int rows, cols, i, j;
+
+  printf("Enter the number of rows: ");
+  scanf("%d", &rows);
+  printf("Enter the number of columns: ");
+  scanf("%d", &cols);
+
+  for (i = 1; i <= rows; i++) {
+    for (j = 1; j <= cols; j++) {
+      if (i == 1 || i == rows || j == 1 || j == cols) {
+        printf("$");
+      } else {
+        printf(" ");
+      }
+    }
+    printf("\n");
+  }
+
+  return 0;
+}
+
+CHEQ5
+#include<stdio.h>
+int main(){
+	int i,a,b,gcd,lcm;
+	printf("enter two numbers:");
+	scanf("%d%d",&a,&b);
+	for(i=1;i<=a&&i<=b;i++){
+		if(a%i==0&&b%i==0)
+			gcd=i;
+		lcm=a*b/gcd;
+	}
+	printf("%d and %dis%d\n",a,b,gcd);
+	printf("%d",lcm);
+}
+
+CMQ4
+#include<stdio.h>
+ int main() 
+{
+ int num,m,n,i;
+ printf("Enter start range :");
+ scanf("%d",&n);
+ printf("Enter end range :");
+ scanf("%d",&m);
+if(m>0 && n>0 && m>n){
+	printf("odd:\n");
+ for(i=n;i<m;i++){
+ 	if(i%2!=0){
+ 		printf("%d\n",i);
+	 }
+ }
+ printf("even:\n");
+ for(i=n;i<m;i++){
+ 	if(i%2==0){
+ 		printf("%d\n",i);
+	 }
+ }
+}
+else{
+	printf("invalid input");
+}
+}
+
+CHQ5
+#include <stdio.h>
+
+int main() {
+    int num, count = 0;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+    while (num != 0) {
+        num /= 10;
+        ++count;
+    }
+    printf("Number of digits: %d", count);
+    return 0;
+}
